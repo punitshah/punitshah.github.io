@@ -1,10 +1,10 @@
 
-var recipe1 = {_id: "001", name: "Caramelized Onions", steps: [{text: "Ready to make caramelized onions?!", trigger: "gesture"}, 
-   {text: "Add oil", trigger: "gesture"}, 
+var recipe1 = {_id: "001", name: "Caramelized Onions", steps: [{text: "Ready to make caramelized onions?!", trigger: "gesture", image:"caramelized-onions.jpg"}, 
+   {text: "Add oil", trigger: "gesture", image:"add-oil.jpg"}, 
    {text: "Wait for pan to heat", trigger: "temperature", temp: "280"}, 
-   {text: "Add onions", trigger: "gesture", }, 
-   {text: "Caramelizing. Stir every minute", trigger: "time", time: "8"}, 
-   {text: "Remove and serve!", trigger: "gesture"}]};
+   {text: "Add onions", trigger: "gesture", image:"add-onions.jpg"}, 
+   {text: "Caramelizing. Stir every minute", trigger: "time", time: "8", image:"stir.jpg"}, 
+   {text: "Remove and serve!", trigger: "gesture", image:"plate.jpg"}]};
 
 var recipe2 = {_id: "002", name: "Chicken & Basil", steps: [{text: "Ready to make Chicken & Basil?!", trigger: "gesture"}, 
    {text: "Add oil", trigger: "gesture"}, 
@@ -44,8 +44,20 @@ Recipe.prototype.render = function(){
   step.className = "step";
   console.log("long: ", this.myRecipe.steps[this.stepCounter].text);
   newRecipe.appendChild(step);
+  renderPhoto();
 
 };
+
+function renderPhoto(){
+  console.log("adding photo", currRecipe.myRecipe.steps[currRecipe.stepCounter].image);
+
+  if(currRecipe.myRecipe.steps[currRecipe.stepCounter].image){
+    var newRecipe = document.getElementById("newRecipe");
+    var image = document.createElement('img');
+    image.src = currRecipe.myRecipe.steps[currRecipe.stepCounter].image;
+    newRecipe.appendChild(image);
+  }
+}
 
 function nextStep(){
 	if(currRecipe.stepCounter < currRecipe.myRecipe.steps.length - 1){
@@ -54,6 +66,7 @@ function nextStep(){
    	var step = document.getElementById("step");
     var elements = document.getElementsByClassName("step");
     elements[0].innerHTML = currRecipe.myRecipe.steps[currRecipe.stepCounter].text;
+    renderPhoto();
     updateTempAndTimer();
 };
 
@@ -64,6 +77,7 @@ function prevStep(){
   //var step = document.getElementById("step");
   var elements = document.getElementsByClassName("step");
   elements[0].innerHTML = currRecipe.myRecipe.steps[currRecipe.stepCounter].text;
+  renderPhoto();
   updateTempAndTimer();
 
 };

@@ -20,17 +20,18 @@
 
     <body id="body" layout="column">
 
+        <div class="container" flex layout="row">
 
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
 
         <div id="main">
-	         <label class="flipper" for="flipper"><p>Adjust Temp Sensor</p></label>
-	         <div id = "flipperContainer">
-	            <select onchange="LaserToggle()">
-	                <option value="off">Off</option>
-	                <option value="on">On</option>
+	        <div class = "flipperContainer">
+	            <label class="flipper" for="flipper"><p>Adjust Temp Sensor</p></label>
+	            <select name="slider" id="flipperData" data-role="slider" onchange="LaserToggle()">
+	                <option class="flipper" value="off">Off</option>
+	                <option class="flipper" value="on">On</option>
 	            </select> 
             </div>
 
@@ -50,6 +51,7 @@
         </div>
         <span class = "hamburgerMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Recipes</span>
 
+        </div>
 
     </body>
 </html>
