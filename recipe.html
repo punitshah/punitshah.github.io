@@ -24,16 +24,16 @@
 
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                 <div class = "flipperContainer">
+		            <label class="flipper" for="flipper"><p>Adjust Temp Sensor</p></label>
+		            <select name="slider" id="flipperData" data-role="slider" onchange="LaserToggle()">
+		                <option class="flipper" value="off">Off</option>
+		                <option class="flipper" value="on">On</option>
+		            </select> 
+	            </div>
             </div>
 
         <div id="main">
-	        <div class = "flipperContainer">
-	            <label class="flipper" for="flipper"><p>Adjust Temp Sensor</p></label>
-	            <select name="slider" id="flipperData" data-role="slider" onchange="LaserToggle()">
-	                <option class="flipper" value="off">Off</option>
-	                <option class="flipper" value="on">On</option>
-	            </select> 
-            </div>
 
             <div id="newRecipe">
                 <script type="text/javascript" src="Recipe.js"></script>
