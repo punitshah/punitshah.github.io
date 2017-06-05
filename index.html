@@ -1,56 +1,18 @@
-<!doctype html>
-<html >
-    <head>
-        <title>Ratatouille</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ratatouille</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
 
-        <script language="javascript" type="text/javascript" src="ady.js"></script>
-        <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+  </head>
 
-        <script>
-            $(document).bind('mobileinit',function(){
-                $.mobile.pushStateEnabled = false;
-            });
-        </script>
-         <link rel="stylesheet" type="text/css" href="recipe.css" />
-        <script language="javascript" type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <meta charset="UTF-8">
-        <script type="text/javascript" src="Recipe.js"></script>
+  <body>
+    <div class = "filler"></div>
+    <h2> Welcome to Ratatouille!</h2>
+    <h4> Here you can view your favorite recipes as you cook!</h4>
+    <a href="recipe.html">Get Started!</a>
 
-    </head>
-
-    <body id="body" layout="column">
-
-        <div class="container" flex layout="row">
-
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            </div>
-
-        <div id="main">
-
-            <label class="flipper" for="flipper"><p>Adjust Temp Sensor</p></label>
-            <select name="slider" id="flipperData" data-role="slider" onchange="LaserToggle()">
-                <option class="flipper" value="off">Off</option>
-                <option class="flipper" value="on">On</option>
-            </select> 
-
-            <div id="newRecipe">
-                <script type="text/javascript" src="Recipe.js"></script>
-                <script type="text/javascript">
-                  recipe1 = new Recipe(1, 001, 0); //recipenum, recipe id, step counter var
-                  recipe1.render();
-                </script>
-               <!--  <button class = "left" onclick="prevStep()">
-                    Previous Step
-                </button>
-                <button class = "right" onclick="nextStep()">
-                    Next Step
-                </button></br> -->
-            </div>
-        </div>
-        <span class = "hamburgerMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Recipes</span>
-
-        </div>
-
-    </body>
+  
+  </body>
 </html>

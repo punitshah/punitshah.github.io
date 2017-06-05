@@ -4,6 +4,12 @@ body {
 	font-family: helvetica;
 }
 
+body, html {
+    height:100%;
+    overflow: hidden;
+}
+
+
 a{
 	margin:20px;
 	font-size: 24px;
@@ -119,12 +125,25 @@ button:hover {
   .sidenav a {font-size: 18px;}
 }
 
-.flipper, #flipperData{
-    position: fixed;
-    bottom:20px;
-    left:50%;
-}
-
 .step{
     font-size: 36px;
+}
+
+#flipperContainer select{
+    position: fixed;
+    bottom:80px;
+    left:50%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 34px;
+    width: 268px;
+}
+
+.flipper{
+    position: fixed;
+    bottom:120px;
+    left:50%;
 }
