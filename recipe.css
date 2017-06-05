@@ -1,0 +1,130 @@
+body {
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: helvetica;
+}
+
+a{
+	margin:20px;
+	font-size: 24px;
+	color: #3F51B5;
+	text-decoration: none
+
+}
+
+button, .timer, .temp{
+    border: 2px solid #3F51B5;
+    background-color: white;
+    color: #3F51B5;
+    padding: 15px 10px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #3F51B5; 
+    color: white;
+}
+
+.hamburgerMenu{
+    position: fixed;
+    top:20px;
+    left:20px;
+}
+
+.iphone, #newRecipe{
+    padding: 10px;
+    text-align: center;
+/*    border: 1px solid black;
+*/    display:inline;
+  /*  width: 400px;
+    height:200px;*/
+    border-radius: 6px;
+    margin: 30px;
+
+}
+
+.right{
+    position: relative;   
+    float:right;
+}
+.left{
+    position: relative;
+    float:left;
+}
+
+.timer, .temp{
+    display: inline-block;
+    position: absolute;   
+    border-radius: 8px;
+    width:150px;
+    bottom:0;
+    vertical-align: bottom;
+    font-size:24px;
+}
+
+.timer{
+    left:0px;
+}
+.temp{
+    right:0px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.flipper, #flipperData{
+    position: fixed;
+    bottom:20px;
+    left:50%;
+}
+
+.step{
+    font-size: 36px;
+}
