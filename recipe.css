@@ -149,7 +149,7 @@ button.closebtn{
 
 .step{
     font-size: 64px;
-    padding-top: 125px;
+    padding-top: 80px;
 }
 
 #flipperContainer select{
@@ -178,7 +178,7 @@ button.closebtn{
 .image{
     display: block;
     margin: auto;
-    width: 30%;
+    width: 25%;
     padding:10px;
     border: 3px solid #3F51B5;
 }
