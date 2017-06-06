@@ -23,18 +23,33 @@ button, .timer, .temp{
     background-color: white;
     color: #3F51B5;
     padding: 15px 10px;
-    margin: 10px;
+    margin: 20px;
     text-align: center;
     text-decoration: none;
     display: block;
     font-size: 16px;
     border-radius: 8px;
     transition-duration: 0.4s;
+    opacity: 1;
+
 }
 
 button:hover {
     background-color: #3F51B5; 
     color: white;
+}
+
+button.laser{
+    display: inline-block;
+}
+
+button.laser:focus {
+  background-color: #3F51B5;
+  color:white;
+}
+
+button.closebtn{
+    font-size: 48px;
 }
 
 .hamburgerMenu{
@@ -67,11 +82,11 @@ button:hover {
 .timer, .temp{
     display: inline-block;
     position: absolute;   
-    border-radius: 8px;
-    width:150px;
-    bottom:40px;
-    vertical-align: bottom;
-    font-size:24px;
+    border-radius: 16px;
+    width:300px;
+    bottom:60px;
+    vertical-align: middle;
+    font-size:42px;
 }
 
 .timer{
@@ -88,7 +103,8 @@ button:hover {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: black;
+    opacity: 0.9;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -126,7 +142,8 @@ button:hover {
 }
 
 .step{
-    font-size: 36px;
+    font-size: 64px;
+    padding-top: 200px;
 }
 
 #flipperContainer select{
@@ -152,9 +169,5 @@ button:hover {
     padding:20px;
 }
 
-.round-button{
-    position: fixed;
-    bottom:80px;
-    left:50%;
-    border-radius: 50px;
-}
+/* LASER TOGGLE */
+

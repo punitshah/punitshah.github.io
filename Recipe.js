@@ -83,15 +83,11 @@ function prevStep(){
 };
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.getElementById("mySidenav").style.width = "300px";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
 }
 
 function fillSidebar(){
@@ -132,9 +128,7 @@ function updateTempAndTimer(){
   if(currRecipe.myRecipe.steps[currRecipe.stepCounter].trigger === "time"){
     var currTimer = currRecipe.myRecipe.steps[currRecipe.stepCounter].time; 
     timer.innerHTML = currTimer + " min left";
-
      window.setTimeout(function(){ 
-      alert("Timer is up, ready for next step");
       nextStep();
       }, currTimer*60);   //*1000 increment to next step after timer
   }
