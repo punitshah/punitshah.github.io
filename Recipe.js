@@ -6,14 +6,14 @@ var recipe1 = {_id: "001", name: "Caramelized Onions", steps: [{text: "Ready to 
    {text: "Caramelizing. Stir every minute", trigger: "time", time: "8", image:"stir.jpg"}, 
    {text: "Remove and serve!", trigger: "gesture", image:"plate.jpg"}]};
 
-var recipe2 = {_id: "002", name: "Chicken & Basil", steps: [{text: "Ready to make Chicken & Basil?!", trigger: "gesture"}, 
-   {text: "Add oil", trigger: "gesture"}, 
+var recipe2 = {_id: "002", name: "Chicken & Basil", steps: [{text: "Ready to make Chicken & Basil?!", trigger: "gesture", image:"chicken-basil.jpg"}, 
+   {text: "Add oil", trigger: "gesture", image:"add-oil.jpg"}, 
    {text: "Wait for pan to heat", trigger: "temperature", temp: "300"}, 
-   {text: "Add garlic and onions", trigger: "gesture", }, 
-   {text: "Cooking. Stir every minute", trigger: "time", time: "6"},
-   {text: "Add chicken and soy sauce", trigger: "gesture", }, 
-   {text: "Cooking chicken. Stir frequently", trigger: "time", time: "7"},  
-   {text: "Remove to a plate and top with basil!", trigger: "gesture"}]};
+   {text: "Add garlic and onions", trigger: "gesture", image:"add-garlic-onion.jpg"}, 
+   {text: "Cooking. Stir every minute", trigger: "time", time: "6", image:"stir.jpg"},
+   {text: "Add chicken and soy sauce", trigger: "gesture", image:"add-chicken-soy.jpg"}, 
+   {text: "Cooking chicken. Stir frequently", trigger: "time", time: "7", image:"stir.jpg"},  
+   {text: "Remove to a plate and top with basil!", trigger: "gesture", image:"chicken-basil.jpg"}]};
 
 var recipes = [recipe1, recipe2];
 
@@ -51,10 +51,17 @@ Recipe.prototype.render = function(){
 function renderPhoto(){
   console.log("adding photo", currRecipe.myRecipe.steps[currRecipe.stepCounter].image);
 
+  var prevImage = document.getElementsByClassName("image")[0];   //clear past step
+  if(prevImage){
+    prevImage.parentNode.removeChild(prevImage);
+  }
+
+
   if(currRecipe.myRecipe.steps[currRecipe.stepCounter].image){
     var newRecipe = document.getElementById("newRecipe");
     var image = document.createElement('img');
-    image.src = currRecipe.myRecipe.steps[currRecipe.stepCounter].image;
+    image.src = "images/" + currRecipe.myRecipe.steps[currRecipe.stepCounter].image;
+    image.className = "image";
     newRecipe.appendChild(image);
   }
 }
@@ -123,24 +130,27 @@ function updateTempAndTimer(){
     temp.parentNode.removeChild(temp);
   }
 
-    var timer = document.createElement('div');
-    timer.className = "timer";
-    newRecipe.appendChild(timer);
+  var timer = document.createElement('div');
+  timer.className = "timer";
+  newRecipe.appendChild(timer);
   if(currRecipe.myRecipe.steps[currRecipe.stepCounter].trigger === "time"){
     var currTimer = currRecipe.myRecipe.steps[currRecipe.stepCounter].time; 
     timer.innerHTML = currTimer + " min left";
      window.setTimeout(function(){ 
       nextStep();
-      }, currTimer*60);   //*1000 increment to next step after timer
+      }, currTimer*60*100);   //*1000 increment to next step after timer
   }
   else{
-    timer.innerHTML = "No Timer Needed";
+    timer.innerHTML = "No Timer";
   }
 
   var temp = document.createElement('div');
   temp.className = "temp";
   if(currRecipe.myRecipe.steps[currRecipe.stepCounter].trigger === "temperature"){
     temp.innerHTML = currTemp + " F / " + currRecipe.myRecipe.steps[currRecipe.stepCounter].temp + " F";
+  }
+  else if(!currTemp){
+    temp.innerHTML = "No Temp";
   }
   else{
     temp.innerHTML = currTemp + " F";
