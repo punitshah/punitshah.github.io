@@ -94,6 +94,7 @@ function fillSidebar(){
   recipes.forEach(function callback(element, counter, array){
       var sidebar = document.getElementById("mySidenav");
       var recipeLink = document.createElement("button");
+      recipeLink.class = "sidebar";
       recipeLink.innerHTML = element.name;
       recipeLink.addEventListener("click", function changeRecipe(){
         console.log("clicked");

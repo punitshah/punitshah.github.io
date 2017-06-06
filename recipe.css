@@ -79,7 +79,7 @@ button.closebtn{
     float:left;
 }
 
-.timer, .temp{
+.timer, .temp, .sidebar{
     display: inline-block;
     position: absolute;   
     border-radius: 16px;
@@ -87,6 +87,11 @@ button.closebtn{
     bottom:60px;
     vertical-align: middle;
     font-size:42px;
+}
+
+.laser{
+    width:100px;
+
 }
 
 .timer{
@@ -125,10 +130,11 @@ button.closebtn{
 
 .sidenav .closebtn {
     position: absolute;
-    top: 0;
-    left: 0px;
-    font-size: 36px;
-    margin-left: 50px;
+    top: 0px;
+    right: 0px;
+    font-size: 72px;
+    margin-right: 40px;
+    margin-top: 0;
 }
 
 #main {
@@ -143,7 +149,7 @@ button.closebtn{
 
 .step{
     font-size: 64px;
-    padding-top: 200px;
+    padding-top: 125px;
 }
 
 #flipperContainer select{
