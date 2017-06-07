@@ -195,13 +195,12 @@ connection.onclose = function(e) {
     IssueSystemMessage( "WebSocket Disconnected!" );
  };
 
-function LaserToggle(){
-    var OnOff = document.getElementById('flipperData').value;  
-    if(OnOff === "on"){
-        OnOff = "*1";
+function LaserToggle(toggle){
+    if(toggle === "on"){
+        var OnOff = "*1";
     }
-    else if(OnOff === "off"){
-        OnOff = "*0";
+    else if(toggle === "off"){
+        var OnOff = "*0";
     }
     console.log('OnOff: ' + OnOff); 
     connection.send(OnOff);
