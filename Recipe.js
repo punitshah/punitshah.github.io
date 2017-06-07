@@ -171,6 +171,9 @@ connection.onmessage = function (e) {
       temp = temp.slice(15,-1); //remove beginning
       console.log('Server (parsed): ', temp);
       currTemp = parseInt(temp) * 9/5 + 32;
+      if(currRecipe.myRecipe.steps[currRecipe.stepCounter].trigger === "temperature" && currTemp > currRecipe.myRecipe.steps[currRecipe.stepCounter].temp){
+        nextStep();
+      }
       updateTempAndTimer();
   }
   if(e.data[2] === "G"){  //Gesture
